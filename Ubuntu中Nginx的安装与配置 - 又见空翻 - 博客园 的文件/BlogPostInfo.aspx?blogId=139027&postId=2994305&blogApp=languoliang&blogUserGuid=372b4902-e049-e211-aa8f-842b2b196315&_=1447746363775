@@ -1,0 +1,37 @@
+<div id="green_channel">
+<a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(2994305,cb_blogId,1);green_channel_success(this,'谢谢推荐！');">好文要顶</a>
+<a id="green_channel_follow" onclick="c_follow();" href="javascript:void(0);">关注我</a>
+<a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);" >收藏该文</a><a id="green_channel_contact" href="//msg.cnblogs.com/send/%E5%8F%88%E8%A7%81%E7%A9%BA%E7%BF%BB" target="_blank">联系我</a>
+<a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="//common.cnblogs.com/images/icon_weibo_24.png" alt="" /></a>
+<a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="//common.cnblogs.com/images/wechat.png" alt="" /></a>
+</div>
+<div id="author_profile">
+<div id="author_profile_info" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/languoliang/" target="_blank"><img src="http://pic.cnblogs.com/face/481369/20140429150707.png" class="author_avatar" alt=""/></a>
+<div id="author_profile_detail" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/languoliang/">又见空翻</a><br/>
+<a href="http://home.cnblogs.com/u/languoliang/followees">关注 - 1</a><br/>
+<a href="http://home.cnblogs.com/u/languoliang/followers">粉丝 - 5</a>
+</div>
+</div>
+<div class="clear"></div>
+<div id="author_profile_honor"></div>
+<div id="author_profile_follow">
+    <a href="javascript:void(0);" onclick="c_follow();return false;">+加关注</a>
+</div>
+</div>
+<div id="div_digg">										
+    <div class="diggit" onclick="votePost(2994305,'Digg')">
+        <span class="diggnum" id="digg_count">0</span>
+    </div>
+	<div class="buryit" onclick="votePost(2994305,'Bury')"> 
+		<span class="burynum" id="bury_count">0</span>
+	</div>
+	<div class="clear"></div>	
+	<div class="diggword" id="digg_tips">
+    (请您对文章做出评价)
+    </div>	
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script>

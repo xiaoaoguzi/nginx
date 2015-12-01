@@ -1,0 +1,83 @@
+<div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input  type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk"/>&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"/></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk"/>&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索"  class="btn_my_zzk"/></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<div class="catListLink">
+<h3 class ="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/languoliang/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/languoliang/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/languoliang/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/languoliang/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/languoliang/tag/" title="我的博客的标签列表">我的标签</a></li>
+<li><a id="itemListLink" onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" href="#">更多链接</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div></div><div id="sidebar_toptags" class="sidebar-block">
+<div class="catListTag">
+<h3 class="catListTitle">我的标签</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/languoliang/tag/C%E8%AF%AD%E8%A8%80%20singed%20unsigned%20char%20%E5%8C%BA%E5%88%AB/">C语言 singed unsigned char 区别</a>(1)</li><li><a href="http://www.cnblogs.com/languoliang/tag/Linux%20Apache%20MySQL%20PHP%20Web/">Linux Apache MySQL PHP Web</a>(1)</li><li><a href="http://www.cnblogs.com/languoliang/tag/linux%20md5%20%E5%8A%A0%E5%AF%86%20%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/">linux md5 加密 用户认证</a>(1)</li><li><a href="http://www.cnblogs.com/languoliang/tag/opensips%20mysql%20%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/">opensips mysql 用户认证</a>(1)</li><li><a href="http://www.cnblogs.com/languoliang/tag/opensips%20%E5%AE%89%E8%A3%85%20%E9%85%8D%E7%BD%AE%20ubuntu/">opensips 安装 配置 ubuntu</a>(1)</li><li><a href="http://www.cnblogs.com/languoliang/tag/opensips%20%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%20mysql%20opensips.cfg/">opensips 用户认证 mysql opensips.cfg</a>(1)</li><li><a href="http://www.cnblogs.com/languoliang/tag/PHP%20curl%20get%20post%20curl_init%20curl_exec%20curl_close%20c/">PHP curl get post curl_init curl_exec curl_close c</a>(1)</li><li><a href="http://www.cnblogs.com/languoliang/tag/php%20unix%E6%97%B6%E9%97%B4%E6%88%B3%20%E6%97%A5%E6%9C%9F%20%E8%BD%AC%E6%8D%A2/">php unix时间戳 日期 转换</a>(1)</li><li><a href="http://www.cnblogs.com/languoliang/tag/php%20web%E5%BC%80%E5%8F%91%20mvc%20smarty/">php web开发 mvc smarty</a>(1)</li><li><a href="http://www.cnblogs.com/languoliang/tag/Ubuntu%20Nginx%20%E5%AE%89%E8%A3%85%20%E9%85%8D%E7%BD%AE/">Ubuntu Nginx 安装 配置</a>(1)</li><li><a href="http://www.cnblogs.com/languoliang/tag/">更多</a></li>
+</ul>
+</div></div><div id="sidebar_categories">
+<div id="sidebar_postcategory" class="catListPostCategory sidebar-block">
+<h3 class="catListTitle">随笔分类</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/languoliang/category/444082.html">C C++(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/languoliang/category/444081.html">Linux(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/languoliang/category/444083.html">PHP(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/languoliang/category/472063.html">SIP(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/languoliang/category/466249.html">web服务器(2)</a> </li>
+
+</ul>
+
+</div>
+
+<div id="sidebar_postarchive" class="catListPostArchive sidebar-block">
+<h3 class="catListTitle">随笔档案</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/languoliang/archive/2013/04.html">2013年4月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/languoliang/archive/2013/03.html">2013年3月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="http://www.cnblogs.com/languoliang/archive/2013/01.html">2013年1月 (2)</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class = "catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"></div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class = "catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<div class="catListView">
+<h3 class = "catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"></div>
+</div></div></div>

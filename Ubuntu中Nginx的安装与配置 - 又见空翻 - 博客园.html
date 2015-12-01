@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<title>Ubuntu中Nginx的安装与配置 - 又见空翻 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=h5zdoMvpyotxl1gAlbby_o3-POeMRbgsgFRLO8kI-xk1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/BlueFresh/bundle-BlueFresh.css?v=VoIQYpsyKiEsCxWOPDTiVOvwHnHY5zFeQaiLSbUi9Dg1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/languoliang/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/languoliang/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/languoliang/wlwmanifest.xml"/>
+<script src="http://common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'languoliang', cb_enable_mathjax=false;</script>
+<script src="/bundles/blog-common.js?v=0q3N7bpnLK57cw_uM7DrZa8bhyXSj2QpgEfOllvBxSo1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/languoliang/"><img id="blogLogo" src="/Skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/languoliang/">挑战，未来</a></h1>
+<h2>编程要非常注重细节，或许我们就应该做到谨小慎微。</h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="MyLinks1_HomeLink" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+<li><a id="MyLinks1_MyHomeLink" class="menu" href="http://www.cnblogs.com/languoliang/">首页</a></li>
+<li><a id="MyLinks1_NewPostLink" class="menu" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="MyLinks1_ContactLink" class="menu" rel="nofollow" href="http://msg.cnblogs.com/send/%E5%8F%88%E8%A7%81%E7%A9%BA%E7%BF%BB">联系</a></li>
+<li><a id="MyLinks1_Syndication" class="menu" href="http://www.cnblogs.com/languoliang/rss">订阅</a>
+<!--<a id="MyLinks1_XMLLink" class="aHeaderXML" href="http://www.cnblogs.com/languoliang/rss"><img src="http://www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="MyLinks1_Admin" class="menu" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			
+<!--done-->
+随笔- 10&nbsp;
+文章- 0&nbsp;
+评论- 12&nbsp;
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/languoliang/archive/2013/04/01/nginx.html">Ubuntu中Nginx的安装与配置</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p align="left"><span style="font-size: 18pt;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong><strong>Ubuntu</strong><strong>中</strong><strong>Nginx</strong><strong>的安装与配置</strong></span></p>
+<p align="left"><span style="font-size: 14pt;"><strong>1.Nginx</strong><strong>介绍</strong></span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp;Nginx是一个非常轻量级的HTTP服务器，Nginx，它的发音为&ldquo;engine X&rdquo;， 是一个高性能的</span><span style="font-size: 18px;">HTTP和</span></p>
+<p align="left"><span style="font-size: 18px;">反向代理服务器，同时也是一个IMAP/POP3/SMTP 代理服务器。</span></p>
+<p align="left"><span style="font-size: 14pt;"><strong>2.</strong><strong>对</strong><strong>PHP</strong><strong>支持</strong></span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp;目前各种web 服务器对PHP的支持一共有三种：</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp;（1）通过web 服务器内置的模块来实现，例如Apache的mod_php5，类似的Apache</span><span style="font-size: 18px;">内置的mod_perl</span></p>
+<p align="left"><span style="font-size: 18px;">可以对perl支持。</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp;（2）通过CGI来实现，这个就好比之前perl的CGI，该种方式的缺点是性能差，因为</span><span style="font-size: 18px;">每次服务器遇到</span></p>
+<p align="left"><span style="font-size: 18px;">这些脚本都需要重新启动脚本解析器来执行脚本然后将结果返回给服务器；</span></p>
+<p align="left"><span style="font-size: 18px;">另一方面就是不太安全；该方面几乎很少使用了。</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp;（3）最新出现一种叫做FastCGI。所谓FastCGI就是对CGI的改进。它一般采用C/S结构，</span><span style="font-size: 18px;">一般脚本处理器</span></p>
+<p align="left"><span style="font-size: 18px;">会启动一个或者多个daemon进程，每次web 服务器遇到脚本的时候，</span><span style="font-size: 18px;">直接交付给FastCGI的进程来执行，然后</span></p>
+<p align="left"><span style="font-size: 18px;">将得到的结果(通常为html)返回给浏览器。</span></p>
+<p align="left"><span style="font-size: 18px;"><strong>2.1 Apache+mod_php</strong><strong>模式</strong></span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp;我们很久一段时间使用经典的Apache+mod_php。</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp;Apache对PHP的支持是通过Apache的模块来支持的。如果从源代码编译安装PHP的话，</span><span style="font-size: 18px;">如果希望Apache支持</span></p>
+<p align="left"><span style="font-size: 18px;">PHP的话，在./configure步骤需要指定</span><span style="font-size: 18px;">--with-apxs2=/usr/local/apache2/bin/apxs 表示告诉编译器通过</span></p>
+<p align="left"><span style="font-size: 18px;">Apache的</span><span style="font-size: 18px;">mod_php5/apxs来提供对PHP5的解析；而且在最后一步make install的时候我们</span><span style="font-size: 18px;">会看到将动态链接库</span></p>
+<p align="left"><span style="font-size: 18px;">libphp5.so拷贝到apache2的安装目录的modules目录下，</span><span style="font-size: 18px;">并且还需要在httpd.conf配置文件中添加LoadModule</span></p>
+<p align="left"><span style="font-size: 18px;">语句来动态将libphp5.so模块</span><span style="font-size: 18px;">加载进来，从而实现Apache对php的支持。</span></p>
+<p align="left"><span style="font-size: 18px;"><strong>2.2 Nginx+FastCGI</strong><strong>模式</strong></span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp;Nginx完全是轻量级的，必须借助第三方的FastCGI处理器才可以对PHP进行解析，</span><span style="font-size: 18px;">因此其实这样看来Nginx是</span></p>
+<p align="left"><span style="font-size: 18px;">非常灵活的，它可以和任何第三方提供解析的处理器实现</span><span style="font-size: 18px;">连接从而实现对PHP的解析(在nginx.conf中很容易设置)。</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp;Nginx可以使用spwan-fcgi。在早期版本中需要安装lighttpd，但是在9.10版本</span><span style="font-size: 18px;">以后直接安装spawn-fcgi就可以。</span></p>
+<p align="left"><span style="font-size: 18px;">现在出现了新的第三方的PHP的FastCGI处理器，</span><span style="font-size: 18px;">叫做PHP-FPM，可以了解一下。本文是基于spawn-fcgi实现对</span></p>
+<p align="left"><span style="font-size: 18px;">PHP模块的支持。</span></p>
+<p align="left"><span style="font-size: 18px;"><strong>2.3 </strong><strong>安装</strong><strong>FastCGI</strong></span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; /usr/bin/spawn-fcgi这个文件来管理 FastCGI，它原属于lighttpd这个包里面，</span><span style="font-size: 18px;">但 9.10 后，spawn-fcgi </span></p>
+<p align="left"><span style="font-size: 18px;">被分离出来单独成包。</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp;（1）使用apt-get在线安装命令如下：</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$sudo apt-get install spawn-fcgi</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp;（2）源代码安装如下，下载地址为：</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="http://www.lighttpd.net/download/spawn-fcgi-1.6.3.tar.gz">http://www.lighttpd.net/download/spawn-fcgi-1.6.3.tar.gz</a></span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;解压缩以后，进入目录下执行如下安装命令：</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$./configure</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$make</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$make install</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; 安装之后，spawn-fcgi命令就可以直接使用了，它的可执行文件在/usr/local/bin/spawn-fcgi。</span></p>
+<p align="left"><span style="font-size: 18px;"><strong>3.Nginx</strong><strong>安装</strong></span></p>
+<p align="left"><span style="font-size: 18px;"><strong>3.1 </strong><strong>安装</strong><strong>Nginx</strong></span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp;（1）在线安装</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sudo apt-get install nginx</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; Nginx的版本是1.2.1</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; ubuntu安装Nginx之后的文件结构大致为：</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; 所有的配置文件都在/etc/nginx下，并且每个虚拟主机已经安排在了/etc/nginx/sites-available下</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; 启动程序文件在/usr/sbin/nginx</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; 日志放在了/var/log/nginx中，分别是access.log和error.log</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; 并已经在/etc/init.d/下创建了启动脚本nginx</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; 默认的虚拟主机的目录设置在了/usr/share/nginx/www</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; （2）源代码安装</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; 下载地址：<a href="http://nginx.org/download/">http://nginx.org/download/</a></span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; 我这里下载的是 nginx-1.3.9.tar.gz，安装过程很简单，如下：</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; $./configure</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; $make</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; $make install</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; 安装成功之后，nginx放置在/usr/local/nginx目录下，主要的配置文件为</span><span style="font-size: 18px;">conf目录下的nginx.conf，</span></p>
+<p align="left"><span style="font-size: 18px;">nginx的启动文件在sbin目录下的nginx文件。</span></p>
+<p align="left"><span style="font-size: 18px;"><strong>3.2 </strong><strong>启动</strong><strong>Nginx</strong></span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp;（1）在线安装的启动过程</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; $sudo /etc/init.d/nginx start</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp;（2）源代码安装的启动过程</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; $cd /usr/local/nginx</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; $sbin/nginx</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; 然后就可以访问了，<a href="http://localhost/">http://localhost/</a>&nbsp;， 一切正常！如果不能访问，先不要继续，</span><span style="font-size: 18px;">看看是什么原因，</span></p>
+<p align="left"><span style="font-size: 18px;">解决之后再继续。</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; 如果你的机器同时安装了Apache，那上面的访问方式就不能使用了，而且nginx都</span><span style="font-size: 18px;">可能启动不了，这是</span></p>
+<p align="left"><span style="font-size: 18px;">因为它们都是用了80这个端口。我们这里将nginx的端口修改为8080，</span></p>
+<p align="left"><span style="font-size: 18px;">这里主要修改nginx的配置文件nginx.conf，将一下这一行</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp;listen 80;</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; 修改为</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp;listen 8080;</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; 然后就可以访问了，<a href="http://localhost:8080/">http://localhost:8080/</a>&nbsp;。</span></p>
+<p align="left"><span style="font-size: 18px;"><strong>3.3 </strong><strong>安装</strong><strong>PHP</strong><strong>和</strong><strong>MySQL</strong></span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; $sudo apt-get install php5-cli&nbsp;<strong>php5-cgi</strong>&nbsp;mysql-server php5-mysql</span></p>
+<p align="left"><span style="font-size: 18px;"><strong>3.4 </strong><strong>测试</strong><strong>Nginx</strong><strong>对</strong><strong>PHP</strong><strong>的支持</strong></span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp;&nbsp; &nbsp;（1）重新启动nginx:</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; $/etc/init.d/nginx restart</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; （2）启动FastCGI:</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; $spawn-fcgi -a 127.0.0.1 -p 9000 -C 10 -u www-data -f /usr/bin/php-cgi</span></p>
+<p align="left"><span style="font-size: 18px;"><strong>&nbsp; &nbsp; &nbsp; spawn-fcgi</strong>启动出现错误时，查看<strong>php-cgi</strong>是否安装，如果么有的话，安装<strong>php5-cgi</strong><strong>。</strong></span></p>
+<p align="left"><span style="font-size: 18px;"><strong>&nbsp; &nbsp; &nbsp; $sudo apt-get install php5-cgi</strong></span></p>
+<p align="left"><span style="font-size: 18px;"><strong>&nbsp; &nbsp;&nbsp;</strong>（3）测试</span></p>
+<p align="left"><span style="font-size: 18px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><strong>打开</strong><a href="http://localhost/phpinfo.php">http://localhost/phpinfo.php</a></span></p>
+<p align="left"><span style="font-size: 18px;"><strong>4.Nginx</strong><strong>配置</strong></span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp;Nginx的配置文件是/etc/nginx/nginx.conf，其中设置了一些必要的参数，我们发现其中这样的语句：</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp;include /etc/nginx/sites-enabled/*</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp;可以看出/etc/nginx/sites-enabled/default文件也是一个核心的配置文件，</span><span style="font-size: 18px;">其中包含</span><span style="font-size: 18px;">了主要的配置信息，</span></p>
+<p align="left"><span style="font-size: 18px;">如服务器跟目录、服务器名称、location信息和server信息。</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp;对于源代码安装的nginx，配置文件为/usr/local/nginx/conf/nginx.conf。</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; 下面主要说明location的匹配规则：</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp;（1）= 前缀的指令严格匹配这个查询。如果找到，停止搜索。</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp;（2）剩下的常规字符串，最长的匹配优先使用。如果这个匹配使用 ^~ 前缀，搜索停止。</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp;（3）正则表达式，按配置文件里的顺序，第一个匹配的被使用。</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp;（4）如果第三步产生匹配，则使用这个结果。否则使用第二步的匹配结果。</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; 在location中可以使用常规字符串和正则表达式。</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; 如果使用正则表达式，你必须使用以下规则：</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （1）~* 前缀选择不区分大小写的匹配</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （2）~&nbsp; 选择区分大小写的匹配</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp; 例子：</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp; location = / {</span></p>
+<p align="left"><span style="font-size: 18px;">　　　　# 只匹配 / 查询。</span></p>
+<p align="left"><span style="font-size: 18px;">　　　　[ configuration A ]</span><br /><span style="font-size: 18px;">
+&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p align="left"><span style="font-size: 18px;">　　location / {</span></p>
+<p align="left"><span style="font-size: 18px;">　　　　# 匹配任何查询，因为所有请求都以 / 开头。</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+# 但是正则表达式规则和长的块规则将被优先和查询匹配。</span></p>
+<p align="left"><span style="font-size: 18px;">　　　　[ configuration B
+]</span></p>
+<p align="left"><span style="font-size: 18px;">　　}</span></p>
+<p align="left"><span style="font-size: 18px;">　　location ^~
+/images/ {</span></p>
+<p align="left"><span style="font-size: 18px;">　　　　# 匹配任何以 /images/ 开头的任何查询并且停止搜索。</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;#
+任何正则表达式将不会被测试。</span></p>
+<p align="left"><span style="font-size: 18px;">　　　　[ configuration C
+]</span></p>
+<p align="left"><span style="font-size: 18px;">　　}</span></p>
+<p align="left"><span style="font-size: 18px;">　　location ~*
+\.(gif|jpg|jpeg)$ {</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;#
+匹配任何以 gif、jpg 或 jpeg 结尾的请求。</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; # 然而所有 /images/ 目录的请求将使用 Configuration C。</span></p>
+<p align="left"><span style="font-size: 18px;">&nbsp;　　　[ configuration D ]</span></p>
+<p align="left"><span style="font-size: 18px;">　　}</span></p>
+<p align="left"><span style="font-size: 18px;">　　这里你还要对正则表达式有一定的了解！！！</span></p>
+<p><span style="font-size: 18px;">&nbsp;</span></p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2013-04-01 21:13</span> <a href='http://www.cnblogs.com/languoliang/'>又见空翻</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="http://i.cnblogs.com/EditPosts.aspx?postid=2994305" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(2994305);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,isLogined=false,cb_blogId=139027,cb_entryId=2994305,cb_blogApp=currentBlogApp,cb_blogUserGuid='372b4902-e049-e211-aa8f-842b2b196315',cb_entryCreatedDate='2013/4/1 21:13:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="site_nav_under"><a href="http://www.cnblogs.com/" target="_blank" title="开发者的网上家园">博客园首页</a><a href="http://q.cnblogs.com/" target="_blank" title="程序员问答社区">博问</a><a href="http://news.cnblogs.com/" target="_blank" title="IT新闻">新闻</a><a href="http://home.cnblogs.com/ing/" target="_blank">闪存</a><a href="http://job.cnblogs.com/" target="_blank">程序员招聘</a><a href="http://kb.cnblogs.com/" target="_blank">知识库</a></div>
+<div id="opt_under_post"></div>
+<script type="text/javascript">
+    fixPostBodyFormat();
+</script>
+<div id="google_ad_c1" class="c_ad_block"></div>
+<div id="under_post_news"></div>
+<div id="google_ad_c2" class="c_ad_block"></div>
+<div id="under_post_kb"></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 200);
+});
+</script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2015 又见空翻
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+</body>
+</html>
